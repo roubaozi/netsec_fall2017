@@ -49,8 +49,8 @@ class EchoServerProtocol(asyncio.Protocol):
 		print ("Echo Server Connection Lost because {}".format(exc))
 		self.transport=None
 loop=asyncio.get_event_loop()
-s=loop.create_server(lambda:EchoServerProtocol(),port=8007)
-#s=playground.getConnector().create_playground_server(lambda:EchoServerProtocol(),8080)
+#s=loop.create_server(lambda:EchoServerProtocol(),port=8006)
+s=playground.getConnector().create_playground_server(lambda:EchoServerProtocol(),8080)
 loop.run_until_complete(s)
 loop.run_forever()
 loop.close()

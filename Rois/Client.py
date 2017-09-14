@@ -45,8 +45,8 @@ class EchoClientProtocol(asyncio.Protocol):
 		self.transport=None
 
 loop=asyncio.get_event_loop()
-c=loop.create_connection(lambda:EchoClientProtocol(),host="127.0.0.1",port=8007)
-#c=playground.getConnector().create_playground_connection(lambda:EchoClientProtocol(),"20174.1.1.1",8080)
+#c=loop.create_connection(lambda:EchoClientProtocol(),host="127.0.0.1",port=8006)
+c=playground.getConnector().create_playground_connection(lambda:EchoClientProtocol(),"20174.1.1.1",8080)
 loop.run_until_complete(c)
 loop.run_forever()
 loop.close()
